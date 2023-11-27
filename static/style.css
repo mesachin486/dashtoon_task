@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue&display=swap');
+
+body {
+    font-family: 'Comic Neue', sans-serif;
+    background: url('/static/images/comics-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: auto;
+    max-width: 800px;
+
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    color: #ff5722;
+}
+
+.comic-form .form-group {
+    margin-bottom: 20px;
+}
+
+.comic-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.comic-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Bangers', cursive;
+}
+
+.comic-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+.comic-panels {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(4, 1fr); 
+    gap: 10px;
+    max-width: 768px;
+    margin: 20px auto;
+}
+
+.comic-panel {
+    background: #fff;
+    border: 2px solid #000;
+    padding-top: 100%; 
+    position: relative;
+}
+
+.comic-panel:nth-child(1) { grid-column: span 3; } 
+.comic-panel:nth-child(2) { grid-column: span 3; }
+
+
+.comic-panel:nth-child(3) { grid-column: span 2; } 
+.comic-panel:nth-child(4) { grid-column: span 2; }
+.comic-panel:nth-child(5) { grid-column: span 2; }
+
+
+.comic-panel:nth-child(6) { grid-column: span 3; }
+.comic-panel:nth-child(7) { grid-column: span 3; }
+
+
+.comic-panel:nth-child(8) { grid-column: span 2; }
+.comic-panel:nth-child(9) { grid-column: span 2; }
+.comic-panel:nth-child(10) { grid-column: span 2; }
+
+
+@media (max-width: 768px) {
+    .comic-panels {
+        grid-template-columns: 1fr; 
+    }
+    .comic-panel {
+        grid-column: auto; 
+        padding-top: 100%; 
+    }
+}
+
+
+
+/* Loading Indicator */
+.loading-indicator {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loading-text {
+    font-size: 24px;
+    font-family: 'Bangers', cursive;
+}
+
+.ellipsis {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.ellipsis span {
+    opacity: 0;
+    animation: fadeInOut 1s infinite;
+}
+
+.ellipsis span:nth-child(1) { animation-delay: 0s; }
+.ellipsis span:nth-child(2) { animation-delay: 0.3s; }
+.ellipsis span:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 768px; /* Maximum width for the content */
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
